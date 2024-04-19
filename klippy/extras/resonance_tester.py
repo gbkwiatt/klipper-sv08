@@ -322,9 +322,10 @@ class ResonanceTester:
                     % (axis_name, best_shaper.name,
                        axis_name, best_shaper.freq))
             if test == '1':
-                self.modify_cfg_value(axis_name + "_freq", str(round(best_shaper.freq, 2)))
+                self.modify_cfg_value(axis_name + "_freq",
+                                      str(round(best_shaper.freq, 2)))
                 self.modify_cfg_value("show_freq", '1')
-                # self.recommended_params.append((axis_name, best_shaper.freq))  # 记录推荐参数
+                # self.recommended_params.append((axis_name, best_shaper.freq))
             if input_shaper is not None:
                 helper.apply_params(input_shaper, axis_name,
                                     best_shaper.name, best_shaper.freq)
@@ -383,12 +384,13 @@ class ResonanceTester:
         shaper_calibrate.save_calibration_data(output, calibration_data,
                                                all_shapers, max_freq)
         return output
-    
+
     def modify_cfg_value(self, option, new_value):
         _config = configparser.ConfigParser()
         _config.read('/home/sovol/printer_data/config/saved_variables.cfg')
         _config.set('Variables', option, new_value)
-        with open('/home/sovol/printer_data/config/saved_variables.cfg', 'w') as file:
+        with open('/home/sovol/printer_data/config/saved_variables.cfg'
+                  , 'w') as file:
             _config.write(file)
 
 def load_config(config):
