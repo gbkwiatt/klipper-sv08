@@ -122,7 +122,7 @@ class ResonanceTester:
     def __init__(self, config):
         self.printer = config.get_printer()
         self.move_speed = config.getfloat('move_speed', 50., above=0.)
-        self.recommended_params = []  # 存储推荐参数
+        self.recommended_params = []
         self.test = VibrationPulseTest(config)
         if not config.get('accel_chip_x', None):
             self.accel_chip_names = [('xy', config.get('accel_chip').strip())]
