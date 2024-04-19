@@ -8,7 +8,6 @@ import os, logging, ast, re
 from string import Template
 from . import menu_keys
 
-
 class sentinel:
     pass
 
