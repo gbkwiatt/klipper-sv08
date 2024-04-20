@@ -19,6 +19,4 @@ jobs:
         with: 
           upstream_repo: https://github.com/KevinOConnor/klipper.git
           upstream_branch: master
-          fetch_args: "--tags"
           token: ${{ secrets.GITHUB_TOKEN }}
-          push_args: "--tags"
